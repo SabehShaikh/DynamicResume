@@ -89,7 +89,7 @@ function createSkillField(index: number): HTMLElement {
   skillField.className = "skill-entry";
   skillField.innerHTML = `
     <label for="skill${index}">Skill ${index}:</label>
-    <input type="text" id="skill${index}" placeholder="Enter skill" required />
+    <input type="text" id="skill${index}" placeholder="Enter skill (e.g. HTML)" required />
     <button type="button" class="close-btn" onclick="removeEntry(this, 'skill')">×</button>
   `;
   return skillField;
@@ -227,12 +227,6 @@ resumeForm.addEventListener("submit", (e) => {
     }
   }
 
-  // Set the innerHTML of the target element
-  // const educationSection = document.querySelector(".education-section .line") as HTMLElement;
-  // if (educationSection) {
-  //   educationSection.innerHTML = education;
-  // }
-
   let experience = "";
   for (let i = 1; i <= experienceCount; i++) {
     const company = (document.getElementById(`company${i}`) as HTMLInputElement)
@@ -295,6 +289,13 @@ resumeForm.addEventListener("submit", (e) => {
     }
   }
 
+  console.log("Name:", name);
+console.log("Education:", education);
+console.log("Experience:", experience);
+console.log("Skills:", skills);
+console.log("Projects:", projects);
+
+
   // Generate resume content
   resumePreview.innerHTML = `
     <div class="container"> 
@@ -307,8 +308,8 @@ resumeForm.addEventListener("submit", (e) => {
       <div class="contact-info">
         <p>📞 ${phone} | 📍 ${location}</p>
 
-         <p>LinkedIn: <i class="fab fa-linkedin"></i> <a href="${linkedin}" target="_blank">${linkedin}</a> 
-         GitHub:  <i class="fab fa-github"></i> <a href="${github}" target="_blank">${github}</a></p>
+         <p><i class="fab fa-linkedin"></i> <a href="${linkedin}" target="_blank">${linkedin}</a> 
+         <i class="fab fa-github"></i> <a href="${github}" target="_blank">${github}</a></p>
 
         <p>Email: ✉️ <a href="mailto:${email}">${email}</a></p>
 
@@ -359,6 +360,8 @@ ${experience}
 
     </div>
   `;
+
+
 
   // Generate and display resume download link
   const downloadLink = document.createElement("a");

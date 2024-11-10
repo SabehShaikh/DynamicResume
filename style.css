@@ -1,99 +1,136 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+
+}
+
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: #f0f2f5;
+
 }
 
 .container {
-  max-width: 900px;
-  margin: 0 auto;
+  max-width: 800px;
+  margin: 40px auto;
   padding: 20px;
-  font-family: "Poppins", sans-serif;
 }
 
+
 h1 {
-  font-size: 2.3em;
+  font-size: 2em;
   color: #333;
   text-align: center;
   margin-bottom: 20px;
 }
 
-h2 {
-  font-size: 1.5em;
-  color: #007bff;
-  margin-top: 10px;
-  text-align: center;
+
+.form-card {
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
 }
 
-/* Form Styling */
 form {
   display: flex;
   flex-direction: column;
 }
 
+.required {
+  color: red;
+  font-size: 0.8em;
+  margin-left: 2px;
+}
+
+
 fieldset {
-  border: 2px solid #006666;
+  border: 1px solid #e0e0e0;
   border-radius: 8px;
   padding: 20px;
   margin-bottom: 20px;
-  background: #f9f9f9;
+  background: #fafafa;
+  transition: all 0.3s ease;
 }
 
+fieldset:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+
 legend {
-  font-size: 1.5em;
+  font-size: 1.2em;
   color: #006666;
   margin-bottom: 10px;
+  font-weight: bold;
 }
 
 label {
   display: block;
   margin-bottom: 5px;
-  font-weight: bold;
+  margin-top: 5px;
   color: #333;
 }
 
-input {
-  width: 100%;
-  padding: 10px;
-  margin-bottom: 10px;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  font-size: 1em;
-}
-
+input,
 textarea {
   width: 100%;
-  padding: 10px;
+  padding: 12px;
   margin-bottom: 10px;
   border: 1px solid #ccc;
   border-radius: 6px;
   font-size: 1em;
-  height: 100px;
-  resize: none;
+  background-color: #fff;
+  transition: border-color 0.2s ease;
 }
 
-.btn {
+input:focus,
+textarea:focus {
+  border-color: #006666;
+  outline: none;
+  box-shadow: 0 0 5px rgba(0, 102, 102, 0.2);
+  background-color: #fff8f0;
+
+}
+
+
+textarea {
+  height: 80px;
+  resize: vertical;
+}
+
+.btn,
+.sub-btn {
   background-color: #006666;
-  width: 100%;
   color: white;
   border: none;
   border-radius: 6px;
   padding: 12px;
   cursor: pointer;
   font-size: 16px;
-  transition: background-color 0.3s ease;
   font-weight: bold;
+  margin-top: 10px;
+  width: 100%;
+  transition: background-color 0.3s ease;
 }
 
-.btn:hover {
-  background-color: #099797;
+.btn:hover,
+.sub-btn:hover {
+  background-color: #077d7d;
 }
 
-.btn:focus {
-  outline: none;
-  box-shadow: 0 0 0 2px rgba(0, 255, 234, 0.5);
+/* Style icon legends */
+legend i {
+  margin-right: 8px;
+  color: #006666;
+  font-size: 18px;
 }
 
 /* Styling for the skill and language entries */
@@ -130,6 +167,7 @@ textarea {
   margin-bottom: 0;
 }
 
+
 .close-btn {
   background: #ff4d4d;
   color: white;
@@ -145,9 +183,7 @@ textarea {
   cursor: pointer;
   position: absolute;
   top: 10px;
-  /* Adjust top position */
   right: 10px;
-  /* Align to the right */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -157,6 +193,23 @@ textarea {
 .close-btn:hover {
   background: #cc0000;
 }
+
+  footer {
+    background-color: #333;
+    color: #fff;
+    padding: 15px;
+    text-align: center;
+  }
+
+  footer p {
+    margin: 0;
+    font-size: 1em;
+  }
+
+  footer a {
+    color: #fff;
+    text-decoration: none;
+  }
 
 /* Resume Preview */
 .resume-preview {
@@ -177,6 +230,7 @@ textarea {
   object-fit: cover;
   margin-bottom: 15px;
 }
+
 
 .header {
   text-align: center;
@@ -224,6 +278,7 @@ a {
 a:hover {
   text-decoration: underline;
 }
+
 
 /* About Me */
 .about-me {
@@ -287,12 +342,14 @@ a:hover {
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
 }
 
+
 .languages-section i,
 .skills-section i {
   margin-right: 10px;
   /* Space between icon and text */
   color: #008080;
 }
+
 
 /* Skills Section */
 
@@ -309,6 +366,7 @@ a:hover {
   padding-bottom: 5px;
   padding-bottom: 5px;
 }
+
 
 .skills-list {
   display: grid;
@@ -370,6 +428,7 @@ section {
   border-bottom: 1px solid #ddd;
   background-color: #f9f9f9;
   border-radius: 2px;
+
 }
 
 section h3 {
@@ -379,6 +438,7 @@ section h3 {
   color: #333;
   font-size: 1.5em;
   font-weight: 600;
+
 }
 
 /* Style the icons in section headers */
@@ -386,6 +446,7 @@ section h3 i {
   margin-right: 10px;
   color: #008080;
   font-size: 1.3em;
+
 }
 
 /* Add hover effect for the icons */
@@ -394,10 +455,16 @@ section h3 i:hover {
   /* Dark teal on hover */
 }
 
+
 .section ul {
   padding-left: 0;
   list-style-type: none;
   margin: 0;
+}
+
+.education-list {
+  list-style-type: none;
+
 }
 
 .section li {
@@ -467,7 +534,9 @@ section h3 i:hover {
     padding: 4px;
   }
 
+
   .header h1 {
+
     font-size: 2em;
     margin: 0;
     color: #333;
@@ -477,6 +546,7 @@ section h3 i:hover {
     grid-template-columns: repeat(2, 1fr);
     /* 2 columns on small screens */
   }
+
 
   .section {
     display: block;
@@ -496,6 +566,7 @@ section h3 i:hover {
     text-align: center;
     margin-bottom: 20px;
   }
+
 
   .header h2 {
     font-size: 1.2em;
@@ -522,9 +593,11 @@ section h3 i:hover {
 }
 
 @media (max-width: 500px) {
+
   h1 {
     font-size: 1.5em;
   }
+
 
   .container {
     padding: 8px;
@@ -546,6 +619,8 @@ section h3 i:hover {
 
   .projects-section a {
     font-size: 0.85em;
+    word-wrap: break-word; /* Allow long URLs to break into the next line if needed */
+
   }
 
   .about-me p {
@@ -571,11 +646,10 @@ section h3 i:hover {
     font-size: 10px;
     padding: 3px;
   }
-}
 
-/* Accessibility and Focus */
-button:focus,
-input:focus,
-textarea:focus {
-  outline: 2px solid #df2727;
+  .btn {
+    font-size: 0.8em;
+    padding: 10px;
+
+  }
 }
