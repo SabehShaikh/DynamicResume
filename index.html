@@ -1,94 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Dynamic Resume Builder</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <div class="container">
-      <h1>Dynamic Resume Builder</h1>
 
-      <!-- Personal Information Form -->
-      <form id="resumeForm">
-        <fieldset>
-          <legend>Personal Information</legend>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dynamic Resume Builder</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
 
-          <label for="username">
-            Resume URL:
-            <input
-              type="text"
-              id="username"
-              name="username"
-              placeholder="Enter your resume URL"
-              required
-            />
-          </label>
+<body>
+  <div class="container">
+    <h1><i class="fas fa-user" style="color: #006666; font-size: 24px;"></i> Dynamic Resume Builder</h1>
 
-          <label for="name">Name:</label>
-          <input type="text" id="name" placeholder="Enter your name" required />
-          <label for="email">Email:</label>
-          <input
-            type="email"
-            id="email"
-            placeholder="Enter your email"
-            required
-          />
-          <label for="location">Location:</label>
-          <input
-            type="text"
-            id="location"
-            placeholder="Enter your location"
-            required
-          />
-          <label for="about">About You:</label>
-          <textarea
-            id="about"
-            placeholder="Tell something about yourself"
-            required
-          ></textarea>
-        </fieldset>
+    <!-- Personal Information Form -->
+    <form id="resumeForm">
+      <fieldset>
+        <legend>Personal Information</legend>
 
-        <!-- Education Section -->
-        <fieldset id="educationSection">
-          <legend>Education</legend>
-          <button type="button" id="addEducationBtn">Add Education</button>
-        </fieldset>
+        <label for="username">Resume URL:</label>
+        <input type="text" id="username" name="username" placeholder="Enter your resume URL" required />
 
-        <!-- Work Experience Section -->
-        <fieldset id="experienceSection">
-          <legend>Work Experience</legend>
-          <button type="button" id="addExperienceBtn">
-            Add Work Experience
-          </button>
-        </fieldset>
+        <label for="name">Name:</label>
+        <input type="text" id="name" placeholder="Enter your name" required />
 
-        <!-- Skills Section -->
-        <fieldset>
-          <legend>Skills</legend>
-          <label for="skills">Skills:</label>
-          <div id="skillsContainer"></div>
-          <button type="button" id="addSkillBtn">Add Skill</button>
-        </fieldset>
+        <label for="title">Position Title:</label>
+        <input type="text" id="title" placeholder="Enter your position (e.g., MERN Stack Developer)" required />
 
-        <!-- Projects Section (Optional) -->
-        <fieldset>
-          <legend>Projects</legend>
-          <label for="addProjectToggle">Do you want to add projects?</label>
-          <input type="checkbox" id="addProjectToggle" />
-          <div id="projectsSection" style="display: none">
-            <button type="button" id="addProjectBtn">Add Project</button>
-          </div>
-        </fieldset>
+        <label for="email">Email:</label>
+        <input type="email" id="email" placeholder="Enter your email" required />
 
-        <button class="sub-btn" type="submit">Generate Resume</button>
-      </form>
+        <label for="phone">Phone Number:</label>
+        <input type="tel" id="phone" placeholder="Enter your phone number" required />
 
-      <div id="resumePreview" class="resume-preview"></div>
-    </div>
+        <label for="location">Location:</label>
+        <input type="text" id="location" placeholder="Enter your location" required />
 
-    <!-- Link to compiled TypeScript file -->
-    <script src="script.js"></script>
-  </body>
+        <label for="linkedin">LinkedIn URL:</label>
+        <input type="url" id="linkedin" placeholder="Enter your LinkedIn profile URL" />
+
+        <label for="github">GitHub URL:</label>
+        <input type="url" id="github" placeholder="Enter your GitHub profile URL" />
+
+        <label for="profileImage">Profile Image:</label>
+        <input type="file" id="profileImage" accept="image/*" />
+
+
+        <label for="about">About You:</label>
+        <textarea id="about" placeholder="Tell something about yourself" required></textarea>
+      </fieldset>
+
+      <!-- Education Section -->
+      <fieldset id="educationSection">
+        <legend><i class="fas fa-graduation-cap" style="color: #006666; font-size: 24px;"></i> Education</legend>
+        <button type="button" class="btn" id="addEducationBtn">Add Education</button>
+      </fieldset>
+
+      <!-- Work Experience Section -->
+      <fieldset id="experienceSection">
+        <legend><i class="fas fa-briefcase" style="color: #006666; font-size: 24px;"></i> Work Experience</legend>
+        <button type="button" class="btn" id="addExperienceBtn">Add Work Experience</button>
+      </fieldset>
+
+      <!-- Skills Section -->
+      <fieldset>
+        <legend><i class="fas fa-cogs"></i> Skills</legend>
+        <label for="skills">Skills:</label>
+        <div id="skillsContainer"></div>
+        <button type="button" class="btn" id="addSkillBtn">Add Skill</button>
+      </fieldset>
+
+      <!-- Languages Section -->
+      <fieldset id="languagesSection">
+        <legend><i class="fas fa-language" style="color: #006666; font-size: 24px;"></i> Languages</legend>
+        <button type="button" class="btn" id="addLanguageBtn">Add Language</button>
+      </fieldset>
+
+      <!-- Projects Section (Mandatory) -->
+      <fieldset id="projectsSection">
+        <legend><i class="fas fa-folder-open"></i> Projects</legend>
+        <button type="button" class="btn" id="addProjectBtn">Add Project</button>
+      </fieldset>
+
+      <button class="sub-btn btn" type="submit">Generate Resume</button>
+    </form>
+
+    <!-- Preview Section -->
+    <div id="resumePreview" class="resume-preview"></div>
+  </div>
+
+  <!-- Link to JavaScript file -->
+  <script src="script.js"></script>
+</body>
+
 </html>
